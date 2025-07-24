@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blossom Cakes</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="output.css"/>
   <script>
-  tailwind.config = {
-    darkMode: 'class',
-  }
-</script>
-
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -22,104 +21,105 @@
     }
   </style>
 </head>
-<body class="bg-pink-50 text-gray-800">
+<body class="bg-pink-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
 
   <!-- Header -->
-    <!-- Header -->
-<header class="bg-white dark:bg-gray-900 shadow-md">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="text-2xl font-bold text-pink-600 dark:text-pink-300">Blossom Cakes</h1>
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-pink-600 dark:text-pink-300">Blossom Cakes</h1>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-4 text-gray-700 dark:text-gray-200">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-4 text-gray-700 dark:text-gray-200">
+        <a href="#" class="hover:text-pink-500">Home</a>
+        <a href="#gallery" class="hover:text-pink-500">Gallery</a>
+        <a href="#features" class="hover:text-pink-500">Why Us</a>
+        <a href="#order" class="hover:text-pink-500">Order</a>
+        <button id="toggleDark" class="ml-2 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">🌙</button>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button id="menuBtn" class="md:hidden text-pink-600 dark:text-pink-300 text-2xl focus:outline-none">&#9776;</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden flex-col px-6 pb-4 space-y-2 md:hidden bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200">
       <a href="#" class="hover:text-pink-500">Home</a>
       <a href="#gallery" class="hover:text-pink-500">Gallery</a>
       <a href="#features" class="hover:text-pink-500">Why Us</a>
       <a href="#order" class="hover:text-pink-500">Order</a>
-      <button id="toggleDark" class="ml-2 bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">🌙</button>
-    </nav>
-
-    <!-- Mobile Nav Toggle Button -->
-    <button id="menuBtn" class="md:hidden text-pink-600 dark:text-pink-300 text-2xl focus:outline-none">&#9776;</button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden flex-col px-6 pb-4 space-y-2 md:hidden bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200">
-    <a href="#" class="hover:text-pink-500">Home</a>
-    <a href="#gallery" class="hover:text-pink-500">Gallery</a>
-    <a href="#features" class="hover:text-pink-500">Why Us</a>
-    <a href="#order" class="hover:text-pink-500">Order</a>
-    <button id="toggleDarkMobile" class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm w-fit">🌙</button>
-  </div>
-</header>
+      <button id="toggleDarkMobile" class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm w-fit">🌙 Toggle Mode</button>
+    </div>
+  </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 px-4 bg-gradient-to-br from-pink-100 to-white">
-    <h2 class="text-5xl font-semibold text-pink-600 mb-4">Celebrate Sweet Moments</h2>
-    <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">Designer cakes crafted with love & creativity for every occasion.</p>
+  <section class="text-center py-20 px-4 bg-gradient-to-br from-pink-100 to-white dark:from-gray-800 dark:to-gray-900">
+    <h2 class="text-5xl font-semibold text-pink-600 dark:text-pink-300 mb-4">Celebrate Sweet Moments</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">Designer cakes crafted with love & creativity for every occasion.</p>
     <a href="#order">
-      <button class="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-full transition">Order Your Cake</button>
+      <button class="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-full transition hover:-translate-y-1 hover:scale-105 duration-300">Order Your Cake</button>
     </a>
   </section>
 
   <!-- Cake Gallery -->
   <section id="gallery" class="py-16 px-6">
-    <h2 class="text-3xl text-center text-pink-600 font-semibold mb-10">Our Beautiful Creations</h2>
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <h2 class="text-3xl text-center text-pink-600 dark:text-pink-300 font-semibold mb-10">Our Beautiful Creations</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Cake Card 1 -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition p-4">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl transition p-4">
         <img src="https://thecakeday.in/cdn/shop/products/81.png?v=1680192068&width=823" alt="Cake 1" class="rounded-xl mb-4 h-56 w-full object-cover">
-        <h3 class="text-xl text-pink-600 font-semibold">Floral Theme Cake</h3>
-        <p class="text-gray-600 text-sm">Perfect for birthdays and anniversaries with handcrafted sugar flowers.</p>
+        <h3 class="text-xl text-pink-600 dark:text-pink-300 font-semibold">Floral Theme Cake</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Perfect for birthdays and anniversaries with handcrafted sugar flowers.</p>
       </div>
       <!-- Cake Card 2 -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition p-4">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl transition p-4">
         <img src="https://130255020.cdn6.editmysite.com/uploads/1/3/0/2/130255020/s588280673304367137_p237_i3_w1536.jpeg" alt="Cake 2" class="rounded-xl mb-4 h-56 w-full object-cover">
-        <h3 class="text-xl text-pink-600 font-semibold">Chocolate Deluxe</h3>
-        <p class="text-gray-600 text-sm">Rich chocolate cake layered with ganache and decorated with truffles.</p>
+        <h3 class="text-xl text-pink-600 dark:text-pink-300 font-semibold">Chocolate Deluxe</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Rich chocolate cake layered with ganache and decorated with truffles.</p>
       </div>
       <!-- Cake Card 3 -->
-      <div class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition p-4">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl transition p-4">
         <img src="https://images.stockcake.com/public/6/2/1/6216d3fc-c58a-4882-a153-3473ffeea6e6_large/unicorn-fantasy-cake-stockcake.jpg" alt="Cake 3" class="rounded-xl mb-4 h-56 w-full object-cover">
-        <h3 class="text-xl text-pink-600 font-semibold">Unicorn Fantasy</h3>
-        <p class="text-gray-600 text-sm">Magical theme cake with rainbow colors & a unicorn topper — kids love it!</p>
+        <h3 class="text-xl text-pink-600 dark:text-pink-300 font-semibold">Unicorn Fantasy</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Magical theme cake with rainbow colors & a unicorn topper — kids love it!</p>
       </div>
     </div>
   </section>
 
   <!-- Features -->
-  <section id="features" class="py-16 px-6 bg-pink-100">
+  <section id="features" class="py-16 px-6 bg-pink-100 dark:bg-gray-800">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
       <div>
-        <h3 class="text-xl text-pink-600 font-semibold mb-2">Custom Designs</h3>
-        <p class="text-gray-600">Your ideas, our creativity — handcrafted just for you.</p>
+        <h3 class="text-xl text-pink-600 dark:text-pink-300 font-semibold mb-2">Custom Designs</h3>
+        <p class="text-gray-600 dark:text-gray-300">Your ideas, our creativity — handcrafted just for you.</p>
       </div>
       <div>
-        <h3 class="text-xl text-pink-600 font-semibold mb-2">Fresh Ingredients</h3>
-        <p class="text-gray-600">No preservatives, only the freshest ingredients go in.</p>
+        <h3 class="text-xl text-pink-600 dark:text-pink-300 font-semibold mb-2">Fresh Ingredients</h3>
+        <p class="text-gray-600 dark:text-gray-300">No preservatives, only the freshest ingredients go in.</p>
       </div>
       <div>
-        <h3 class="text-xl text-pink-600 font-semibold mb-2">Timely Delivery</h3>
-        <p class="text-gray-600">We deliver on time — every time, with love and care.</p>
+        <h3 class="text-xl text-pink-600 dark:text-pink-300 font-semibold mb-2">Timely Delivery</h3>
+        <p class="text-gray-600 dark:text-gray-300">We deliver on time — every time, with love and care.</p>
       </div>
     </div>
   </section>
 
-  <!-- Custom Order Form -->
+  <!-- Order Form -->
   <section id="order" class="py-16 px-4">
-    <h2 class="text-3xl text-center font-semibold text-pink-600 mb-8">Customize Your Cake</h2>
-    <form class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-md space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full border border-pink-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-400">
-      <input type="email" placeholder="Your Email" class="w-full border border-pink-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-400">
-      <textarea rows="4" placeholder="Describe your custom cake idea..." class="w-full border border-pink-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+    <h2 class="text-3xl text-center font-semibold text-pink-600 dark:text-pink-300 mb-8">Customize Your Cake</h2>
+    <form class="max-w-xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-md space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full border border-pink-300 dark:border-pink-500 bg-white dark:bg-gray-900 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <input type="email" placeholder="Your Email" class="w-full border border-pink-300 dark:border-pink-500 bg-white dark:bg-gray-900 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <textarea rows="4" placeholder="Describe your custom cake idea..." class="w-full border border-pink-300 dark:border-pink-500 bg-white dark:bg-gray-900 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
       <button class="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-full transition w-full">Send Request</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 py-6 bg-white border-t">
+  <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-6 bg-white dark:bg-gray-900 border-t">
     &copy; 2025 Blossom Cakes. All rights reserved.
   </footer>
-<script src="script.js"></script>
+  <script src="script.js">
+  </script>
+
 </body>
 </html>
